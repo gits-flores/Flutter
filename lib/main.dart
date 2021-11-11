@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_login/Screens/OnBoarding/onboarding_screen.dart';
 import 'package:flutter_login/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_login/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+int isviewed;
+
+void main() async{
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  isviewed = prefs.getInt('onBoard');
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
@@ -15,7 +28,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: isviewed != 0 ? OnBoardScreen() :  WelcomeScreen(),
     );
   }
 }
