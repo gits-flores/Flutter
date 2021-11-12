@@ -17,7 +17,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
   PageController _pageController;
   List<OnboardModel> screens = <OnboardModel> [
     OnboardModel(
-      img: "assets/images/onboardsatu.png",
+      img: "assets/images/onboradsatu.png",
       text: "Pahami Diri Lebih Baik",
       desc: "Menembus rintangan untuk belajar dan menemukan potensi tersembunyi anda",
       bg: Colors.white,
@@ -139,7 +139,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                     screens[index].desc,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 14.0,
+                      fontSize: 17.0,
                       fontFamily: 'Montserrat',
                       color: kblack,
                     ),
