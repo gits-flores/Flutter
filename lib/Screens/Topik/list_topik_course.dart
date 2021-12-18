@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login/Screens/Topik/MateriTopik/materi_topik.dart';
 import 'package:flutter_login/Screens/Topik/dummy/dummy_topik.dart';
 import 'package:flutter_login/components/card_body.dart';
 import 'package:flutter_login/components/header_topik.dart';
@@ -22,6 +23,11 @@ class _ListTopikCourseState extends State<ListTopikCourse> {
         backgroundColor: Color(0xFFF6F6F6),
         foregroundColor: Colors.black,
         centerTitle: true,
+        actions: [
+          IconButton(icon: Icon(Icons.search, color: Colors.black,),
+            onPressed: (){},
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -45,6 +51,7 @@ class _ListTopikCourseState extends State<ListTopikCourse> {
                   desc: dmy.desc,
                   buttonTitle: dmy.buttonTitle,
                   colorImage: Color(0xFF007C90),
+                  detail: MateriTopik(titleAppbar: dmy.title,),
                 );
               },
               itemCount: dummyTopikCourse.length,
